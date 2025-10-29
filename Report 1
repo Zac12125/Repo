@@ -1,0 +1,21 @@
+## Report 1: Cursor Composer - AI-Powered Coding Agent
+
+**1\. Link to Site** <https://cursor.com/blog/composer>
+
+**2\. Summary**
+
+Cursor has released Composer, a groundbreaking AI agent model specifically designed for software engineering that achieves frontier-level coding performance while operating four times faster than competing models. The innovation represents a significant advancement in AI-assisted development tools.
+
+Composer is built as a mixture-of-experts language model trained through reinforcement learning across diverse development environments. During training, the model learns to solve real-world software engineering challenges in large codebases while having access to production-grade tools including file editing, semantic search, terminal commands, and code analysis capabilities. This specialized training allows Composer to understand entire codebases, suggest complex code modifications, and execute sophisticated development tasks while maintaining interactive speed.
+
+The key breakthrough lies in Composer's training methodology. Rather than simply learning from static code examples, the model actively learns by attempting to solve problems and receiving feedback on its solutions. This reinforcement learning approach enables Composer to discover useful behaviors on its own, including performing complex searches, fixing linter errors, and writing unit tests. The model is incentivized during training to make efficient tool choices and maximize parallelism, keeping response times fast enough for interactive development.
+
+At the technical level, Composer uses custom training infrastructure leveraging PyTorch and Ray to power asynchronous reinforcement learning at scale. The team built custom MXFP8 MoE kernels combined with expert parallelism and hybrid sharded data parallelism, allowing training across thousands of NVIDIA GPUs with minimal communication overhead. Training at low precision (MXFP8) also enables faster inference speeds without requiring post-training quantization.
+
+To evaluate Composer's effectiveness, Cursor created Cursor Bench, an internal benchmark consisting of real agent requests from their engineers and researchers, along with hand-curated optimal solutions. This benchmark measures not just correctness but also adherence to existing codebase abstractions and software engineering best practices. On these benchmarks, Composer achieves frontier coding results, though models like GPT-5 and Claude Sonnet 4.5 still outperform it overall.
+
+The practical impact has been immediate within Cursor's own team, where many colleagues have adopted Composer for daily development work. The model's combination of intelligence and speed creates what the team calls a "delightful" coding experience that keeps developers in flow rather than waiting for AI responses. This represents a significant evolution from traditional code completion tools toward true AI pair programming agents.
+
+**3\. Additional Link to Support the Main Page** <https://www.todayin-ai.com/p/cursor> (Background on Cursor's growth to \$500M ARR and \$9.6B valuation)
+
+**4\. Link to Background Information** <https://www.kukarella.com/news/reinforcement-learning-is-making-ai-code-generation-smarter> (Explains reinforcement learning in AI code generation context)
